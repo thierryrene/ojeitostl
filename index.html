@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respire Networking</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter, Playfair Display, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Estilo base para a página */
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Adiciona o background de linhas verticais */
+    .background-lines {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='200' height='1'%3e%3cpath d='M 199 0 V 1' stroke='%23e5e7eb' stroke-width='1'/%3e%3c/svg%3e");
+      background-position: center top;
+    }
+
+    /* Classe customizada para a fonte Playfair Display */
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Classe customizada para a fonte Montserrat */
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Custom styles for the new bottom mobile menu */
+    @media (max-width: 767px) {
+      #bottom-mobile-menu {
+        max-height: 70vh;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #bottom-mobile-menu.is-open {
+        transform: translateY(0);
+      }
+
+      #new-mobile-trigger {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease-in-out;
+      }
+
+      #new-mobile-trigger.is-open {
+        transform: rotate(45deg);
+      }
+
+      #bottom-mobile-menu nav ul {
+        max-height: calc(70vh - 80px);
+        /* 70vh - top/bottom padding */
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Header Fixo para Desktop -->
+  <header id="page-header" class="fixed top-0 left-0 right-0 z-30 transition-all duration-300 ease-in-out py-6 md:py-4">
+    <div class="w-full max-w-[1500px] mx-auto px-6 md:px-10 flex justify-between items-center">
+      <nav class="hidden md:block w-full">
+        <ul id="main-nav"
+          class="flex flex-wrap items-center justify-between w-full gap-x-6 gap-y-2 text-sm text-gray-300 font-montserrat">
+          <li><a href="#" class="hover:text-white transition-colors">Intro</a></li>
+          <li><a href="#clube" class="hover:text-white transition-colors">O que é</a></li>
+          <li><a href="#perfis" class="hover:text-white transition-colors">Para quem é</a></li>
+          <li><a href="#time-stl" class="hover:text-white transition-colors">Time STL</a></li>
+          <li><a href="#processo" class="hover:text-white transition-colors">Processo</a></li>
+          <li><a href="#nasceu-para" class="hover:text-white transition-colors">Nasceu Para</a></li>
+          <li><a href="#onde-e-como" class="hover:text-white transition-colors">Onde e Como</a></li>
+          <li><a href="#real-time" class="hover:text-white transition-colors">Real Time</a></li>
+          <li><a href="#real-life" class="hover:text-white transition-colors">Real Life</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Dúvidas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <div class="relative h-screen w-full">
+
+    <!-- Imagem de Fundo -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto-format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Duas mulheres em uma reunião de networking, uma falando e a outra ouvindo atentamente"
+        class="w-full h-full object-cover filter grayscale">
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Conteúdo da Página -->
+    <div class="relative z-10 h-full w-full">
+      <div class="mx-auto w-full max-w-[1500px] h-full flex items-center p-6 md:p-10">
+        <!-- Corpo Principal -->
+        <div class="grid md:grid-cols-[auto_1fr_auto] items-center h-full w-full gap-4 flex-col text-center">
+          <aside class="flex items-center justify-center h-full md:order-1 order-1">
+            <span class="uppercase tracking-widest text-xs text-gray-400 font-playfair">Todo o Brasil</span>
+          </aside>
+
+          <main class="flex flex-col items-center justify-center text-center md:order-2 order-2">
+            <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl font-light leading-tight">
+              Respire<br>
+              o jeito STL<br>
+              de fazer<br>
+              <span class="font-normal px-4 py-1 mt-4 inline-block tracking-widest font-montserrat">[Networking]</span>
+            </h1>
+          </main>
+
+          <aside class="flex items-center justify-center h-full md:order-3 order-3">
+            <span class="uppercase tracking-widest text-xs text-gray-400 font-playfair">Mar - Ago / 2026</span>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer: Barra de Ação Fixa -->
+    <footer
+      class="fixed bottom-0 left-0 right-0 z-20 md:left-1/2 md:-translate-x-1/2 md:bottom-6 md:w-auto md:rounded-full bg-black/40 backdrop-blur-md shadow-lg">
+      <div class="flex items-center justify-between p-4 md:p-1.5 md:pr-2">
+        <span class="text-white text-sm px-2">Quero entrar no clube</span>
+        <button id="cta-button"
+          class="bg-blue-600 text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all">
+          Clique aqui
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- INÍCIO DO BLOCO "O QUE É" -->
+  <section id="clube" class="bg-white text-gray-900 border-b border-gray-300">
+    <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+      <header class="text-center mb-10">
+        <img
+          src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/ojeitostlfundobranco-1-20250922203403.png"
+          alt="Logo O Jeito STL Creative Club" class="mx-auto h-24 md:h-28 w-auto">
+      </header>
+      <div class="text-center mb-16 md:mb-24">
+        <h2 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair">O QUE É?</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+        <div class="flex items-center">
+          <p class="text-xl sm:text-2xl lg:text-3xl leading-relaxed sm:leading-loose text-gray-800 font-montserrat">
+            O Jeito STL Creative Club é a chave para os bastidores do STEAL THE LOOK. Aqui dentro, profissionais da
+            economia criativa se unem em um clube exclusivo para acessar segredos, trocar conhecimentos e superar
+            desafios reais juntas, com um objetivo compartilhado: dar um push na carreira e nos negócios.
+          </p>
+        </div>
+        <div>
+          <div class="space-y-8 font-montserrat">
+            <article>
+              <h3 class="text-xl font-bold mb-2">Tenha acesso aos bastidores</h3>
+              <p class="text-base text-gray-600 leading-relaxed">
+                Acesse o que (e quem!) está por trás dos conteúdos e das tendências do maior veículo de comunicação
+                digital do universo feminino do Brasil.
+              </p>
+            </article>
+            <article>
+              <h3 class="text-xl font-bold mb-2">Seja parte de um clube exclusivo</h3>
+              <p class="text-base text-gray-600 leading-relaxed">
+                Compartilhe o networking e a curadoria das mentes criativas afiadas que movimentam o Steal The Look.
+              </p>
+            </article>
+            <article>
+              <h3 class="text-xl font-bold mb-2">Esteja sempre atualizada</h3>
+              <p class="text-base text-gray-600 leading-relaxed">
+                Desenvolva seu olhar ágil para os movimentos do mercado criativo para entender as estratégias que
+                realmente dão resultado e te colocam dois passos à frente.
+              </p>
+            </article>
+            <article>
+              <h3 class="text-xl font-bold mb-2">Amplie sua identidade profissional</h3>
+              <p class="text-base text-gray-600 leading-relaxed">
+                Expresse sua personalidade profissional em um espaço seguro que respeita seu ritmo com abordagens
+                flexíveis para crescer de forma orgânica e única.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "O QUE É" -->
+
+  <!-- INÍCIO DO BLOCO "PARA QUEM É" -->
+  <section id="perfis" class="bg-white text-gray-900">
+    <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+      <header class="text-center mb-16 md:mb-24">
+        <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair mb-4">PARA QUEM É?</h3>
+        <h2 class="text-4xl md:text-5xl font-playfair text-gray-800">Quem é você no STL Creative Club?</h2>
+      </header>
+
+      <div class="relative">
+        <!-- Imagem da Bolsa Posicionada Absolutamente -->
+        <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/image-17-20250929182231.png"
+          alt="Bolsa de prata estilizada"
+          class="hidden md:block absolute -top-8 right-0 w-48 h-auto opacity-80 z-0 transform -translate-y-1/2">
+
+        <div class="relative z-10 space-y-8">
+          <!-- Perfil 1: Especialista -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Especialista</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Profissionais que trabalham com marketing e
+              conteúdo.</p>
+          </div>
+          <!-- Perfil 2: Fashionista -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Fashionista</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Profissionais que trabalham com moda e
+              beleza</p>
+          </div>
+          <!-- Perfil 3: Creator -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Creator</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Criadoras de conteúdo e influenciadoras.</p>
+          </div>
+          <!-- Perfil 4: Boss -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Boss</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Empreendedoras e heads de negócios.</p>
+          </div>
+          <!-- Perfil 5: Antenada -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Antenada</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Estudantes que estão expandindo
+              conhecimentos.</p>
+          </div>
+          <!-- Perfil 6: Icônica -->
+          <div
+            class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Icônica</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Profissionais em transição de carreira.</p>
+          </div>
+          <!-- Perfil 7: Curiosa -->
+          <div
+            class="border-t border-b border-gray-300 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <h4 class="font-playfair text-4xl lg:text-5xl text-gray-900">Curiosa</h4>
+            <p class="font-montserrat text-gray-600 md:text-right max-w-xs">Quem quer mesmo é viver o STL Creative Club
+              de perto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "PARA QUEM É" -->
+
+  <!-- INÍCIO DO BLOCO "TIME STL" -->
+  <section id="time-stl" class="bg-white text-gray-900">
+    <div class="w-full max-w-[1500px] mx-auto px-6 pt-12 md:pt-20 lg:pt-24">
+      <header class="text-center mb-16 md:mb-24">
+        <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair">TIME STL</h3>
+      </header>
+    </div>
+
+    <div class="background-lines">
+      <div class="w-full max-w-[1500px] mx-auto px-6">
+        <div class="flex flex-col items-center gap-y-16">
+
+          <!-- Primeira Linha: 2 Cards -->
+          <div class="w-full flex flex-col sm:flex-row justify-center gap-x-12 gap-y-16">
+            <!-- Card Manuela -->
+            <div class="w-full max-w-sm">
+              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+                <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/rectangle-16-20250930174935.png"
+                  alt="Foto de Manuela Bordasch" class="w-full h-full object-cover filter grayscale">
+              </div>
+              <div class="text-center">
+                <h3 class="font-montserrat text-xl font-bold text-gray-900">Manuela Bordasch</h3>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Fundadora do Steal The Look e do
+                  PUSH coapresentadora do O que tem na sua carteira?</p>
+              </div>
+            </div>
+
+            <!-- Card Laís -->
+            <div class="w-full max-w-sm">
+              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+                <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/lais-miranda-20250930174935.png"
+                  alt="Foto de Laís Miranda" class="w-full h-full object-cover filter grayscale">
+              </div>
+              <div class="text-center">
+                <h3 class="font-montserrat text-xl font-bold text-gray-900">Laís Miranda</h3>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Coordenadora de Gente & Gestão
+                  Steal the Look</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Segunda Linha: 3 Cards -->
+          <div class="w-full flex flex-col md:flex-row justify-center gap-x-12 gap-y-16">
+            <!-- Card Claudiana -->
+            <div class="w-full max-w-sm">
+              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+                <img
+                  src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/claudiana-ribeiro-20250930174935.png"
+                  alt="Foto de Claudiana Ribeiro" class="w-full h-full object-cover filter grayscale">
+              </div>
+              <div class="text-center">
+                <h3 class="font-montserrat text-xl font-bold text-gray-900">Claudiana Ribeiro</h3>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente de Comunidade Steal the
+                  Look</p>
+              </div>
+            </div>
+
+            <!-- Card Bruna -->
+            <div class="w-full max-w-sm">
+              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+                <img
+                  src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/bruna-fortino-20250930174935.png"
+                  alt="Foto de Bruna Fortino" class="w-full h-full object-cover filter grayscale">
+              </div>
+              <div class="text-center">
+                <h3 class="font-montserrat text-xl font-bold text-gray-900">Bruna Fortino</h3>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente Comercial Steal the Look
+                </p>
+              </div>
+            </div>
+
+            <!-- Card Isabella -->
+            <div class="w-full max-w-sm">
+              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+                <img
+                  src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/isabella-aredes-20250930174935.png"
+                  alt="Foto de Isabella Aredes" class="w-full h-full object-cover filter grayscale">
+              </div>
+              <div class="text-center">
+                <h3 class="font-montserrat text-xl font-bold text-gray-900">Isabella Aredes</h3>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente de Conteúdo Steal the
+                  Look</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloco Convidadas -->
+          <div class="w-full pt-16 md:pt-24">
+            <header class="text-center mb-16">
+              <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair">CONVIDADAS</h3>
+            </header>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+              <!-- Card Em Breve 1 -->
+              <div class="aspect-square bg-gray-100 rounded-2xl shadow-lg flex items-center justify-center">
+                <span class="text-gray-500 font-montserrat text-sm">Em breve</span>
+              </div>
+              <!-- Card Em Breve 2 -->
+              <div class="aspect-square bg-gray-100 rounded-2xl shadow-lg flex items-center justify-center">
+                <span class="text-gray-500 font-montserrat text-sm">Em breve</span>
+              </div>
+              <!-- Card Em Breve 3 -->
+              <div class="aspect-square bg-gray-100 rounded-2xl shadow-lg flex items-center justify-center">
+                <span class="text-gray-500 font-montserrat text-sm">Em breve</span>
+              </div>
+              <!-- Card Em Breve 4 -->
+              <div class="aspect-square bg-gray-100 rounded-2xl shadow-lg flex items-center justify-center">
+                <span class="text-gray-500 font-montserrat text-sm">Em breve</span>
+              </div>
+              <!-- Card Em Breve 5 -->
+              <div class="aspect-square bg-gray-100 rounded-2xl shadow-lg flex items-center justify-center">
+                <span class="text-gray-500 font-montserrat text-sm">Em breve</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloco Mensagem Final -->
+          <div class="relative w-full pt-24 md:pt-32 text-center pb-12 md:pb-20 lg:pb-24">
+            <div class="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-white to-transparent"></div>
+            <p class="relative z-10 font-playfair text-2xl text-gray-600">Esperem grandes nomes!</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "TIME STL" -->
+
+  <!-- INÍCIO DO BLOCO "PROCESSO" -->
+  <section id="processo" class="bg-white text-gray-900">
+    <div class="background-lines">
+      <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+        <header class="text-center mb-12 md:mb-16">
+          <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair">PROCESSO</h3>
+          <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto font-playfair">
+            O processo é mais real quando vivemos ele juntas. Como é a experiência do clube, passo a passo:
+          </p>
+        </header>
+        <div>
+          <!-- Imagem para Mobile -->
+          <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/frame-140-20250929225544.png"
+            alt="[Infográfico do processo do clube, versão mobile]" class="md:hidden w-full h-auto mx-auto">
+          <!-- Imagem para Desktop -->
+          <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/frame-109-1-20250929225031.png"
+            alt="[Infográfico do processo do clube, versão desktop]" class="hidden md:block w-full h-auto mx-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "PROCESSO" -->
+
+  <!-- INÍCIO DO BLOCO "O CREATIVE CLUB NASCEU PARA" -->
+  <section id="nasceu-para" class="bg-white text-gray-900 border-b border-gray-300">
+    <div class="background-lines">
+      <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+        <header class="text-center mb-16 md:mb-24">
+          <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair">O CREATIVE CLUB NASCEU PARA
+          </h3>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Card 1 -->
+          <div>
+            <svg viewBox="0 0 400 150" class="w-full h-auto drop-shadow-sm">
+              <!-- Backgrounds -->
+              <path d="M 16 0 H 100 V 150 H 16 A 16 16 0 0 1 0 134 V 16 A 16 16 0 0 1 16 0 Z" fill="#a3a3a3" />
+              <path d="M 100 0 H 384 A 16 16 0 0 1 400 16 V 134 A 16 16 0 0 1 384 150 H 100 V 0 Z" fill="#fafafa" />
+
+              <!-- Number -->
+              <text x="50" y="100" font-family="Playfair Display, serif" font-size="80" font-weight="700" fill="#ffffff"
+                text-anchor="middle">1</text>
+
+              <!-- Text Content -->
+              <foreignObject x="120" y="15" width="260" height="120">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
+                    Ser uma rede de apoio com quem você pode contar, trocar e compartilhar experiências.
+                  </p>
+                </div>
+              </foreignObject>
+            </svg>
+          </div>
+
+          <!-- Card 2 -->
+          <div>
+            <svg viewBox="0 0 400 150" class="w-full h-auto drop-shadow-sm">
+              <!-- Backgrounds -->
+              <path d="M 16 0 H 100 V 150 H 16 A 16 16 0 0 1 0 134 V 16 A 16 16 0 0 1 16 0 Z" fill="#a3a3a3" />
+              <path d="M 100 0 H 384 A 16 16 0 0 1 400 16 V 134 A 16 16 0 0 1 384 150 H 100 V 0 Z" fill="#fafafa" />
+
+              <!-- Number -->
+              <text x="50" y="100" font-family="Playfair Display, serif" font-size="80" font-weight="700" fill="#ffffff"
+                text-anchor="middle">2</text>
+
+              <!-- Text Content -->
+              <foreignObject x="120" y="15" width="260" height="120">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
+                    Ativar um networking relevante para você crescer na carreira.
+                  </p>
+                </div>
+              </foreignObject>
+            </svg>
+          </div>
+
+          <!-- Card 3 -->
+          <div>
+            <svg viewBox="0 0 400 150" class="w-full h-auto drop-shadow-sm">
+              <!-- Backgrounds -->
+              <path d="M 16 0 H 100 V 150 H 16 A 16 16 0 0 1 0 134 V 16 A 16 16 0 0 1 16 0 Z" fill="#a3a3a3" />
+              <path d="M 100 0 H 384 A 16 16 0 0 1 400 16 V 134 A 16 16 0 0 1 384 150 H 100 V 0 Z" fill="#fafafa" />
+
+              <!-- Number -->
+              <text x="50" y="100" font-family="Playfair Display, serif" font-size="80" font-weight="700" fill="#ffffff"
+                text-anchor="middle">3</text>
+
+              <!-- Text Content -->
+              <foreignObject x="120" y="15" width="260" height="120">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
+                    Ensinar como fazer curadoria de conteúdos relevantes em um mar de conteúdos ruins.
+                  </p>
+                </div>
+              </foreignObject>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "O CREATIVE CLUB NASCEU PARA" -->
+
+  <!-- INÍCIO DO BLOCO "ONDE E COMO" -->
+  <section id="onde-e-como" class="bg-[#7E57C2] text-white overflow-hidden font-montserrat">
+    <div
+      class="relative w-full max-w-[1500px] mx-auto px-6 py-24 md:py-32 lg:py-40 flex flex-col items-center justify-center min-h-[80vh] sm:min-h-[70vh]">
+
+      <!-- Conteúdo textual superior -->
+      <header class="text-center z-10 mb-12 md:mb-20">
+        <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-200 uppercase font-playfair">ONDE E COMO</h3>
+        <p class="mt-6 font-playfair text-3xl md:text-5xl text-white">
+          [ONLINE + PRESENCIAL]*
+        </p>
+        <p class="mt-4 text-lg md:text-xl text-gray-200">
+          Encontros em <span class="font-playfair italic">Real Time</span> e <span class="font-playfair italic">Real
+            Life.</span>
+        </p>
+      </header>
+
+      <!-- Imagens responsivas -->
+      <div class="w-full max-w-4xl lg:max-w-5xl px-4">
+        <!-- Imagem para Mobile -->
+        <img
+          src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/ksnip-20250930-100249-20250930130305.png"
+          alt="Faixa com emojis exibida em celulares" class="md:hidden w-full h-auto">
+        <!-- Imagem para Desktop -->
+        <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/frame-46-1-20250930124352.png"
+          alt="Faixa com emojis exibida em desktops" class="hidden md:block w-full h-auto">
+      </div>
+
+
+      <!-- Textos dos cantos -->
+      <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-xs text-gray-200 tracking-widest uppercase">
+        REAL TIME
+      </div>
+      <div class="absolute bottom-6 right-6 md:bottom-10 md:right-10 text-xs text-gray-200 tracking-widest uppercase">
+        REAL LIFE
+      </div>
+
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "ONDE E COMO" -->
+
+  <!-- INÍCIO DO BLOCO "REAL TIME" -->
+  <section id="real-time" class="bg-[#0A25FE] text-white">
+    <div
+      class="w-full max-w-[1500px] mx-auto px-6 py-24 md:py-32 lg:py-40 grid grid-cols-1 md:grid-cols-3 md:gap-x-12 lg:gap-x-20 items-start">
+
+      <!-- Cabeçalho (coluna 1 no desktop) -->
+      <header class="text-center md:text-left md:col-span-1">
+        <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-200 uppercase font-playfair">ONLINE</h3>
+        <h2 class="font-playfair text-5xl md:text-7xl mt-2">Real Time</h2>
+      </header>
+
+      <!-- Lista (coluna 2 no desktop) -->
+      <div class="space-y-8 mt-16 md:mt-0 md:col-span-2">
+        <!-- Item 1 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            1
+          </div>
+          <p class="font-playfair text-lg">Instagram privado</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            2
+          </div>
+          <p class="font-playfair text-lg">Bate-papo com convidadas de cada fase</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            3
+          </div>
+          <p class="font-playfair text-lg">Playbooks</p>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            4
+          </div>
+          <p class="font-playfair text-lg">Frameworks</p>
+        </div>
+        <!-- Item 5 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            5
+          </div>
+          <p class="font-playfair text-lg">Newsletter de tendências</p>
+        </div>
+        <!-- Item 6 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-400/50 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-800 flex items-center justify-center font-bold font-playfair">
+            6
+          </div>
+          <p class="font-playfair text-lg">Encontros ao vivo com curadoras STL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "REAL TIME" -->
+
+  <!-- INÍCIO DO BLOCO "REAL LIFE" -->
+  <section id="real-life" class="bg-[#CDDC39] text-gray-800">
+    <div
+      class="w-full max-w-[1500px] mx-auto px-6 py-24 md:py-32 lg:py-40 grid grid-cols-1 md:grid-cols-3 md:gap-x-12 lg:gap-x-20 items-start">
+
+      <!-- Lado esquerdo (cabeçalho) -->
+      <header class="text-center md:text-left md:col-span-1">
+        <h3 class="text-sm font-semibold tracking-[0.2em] text-gray-600 uppercase font-playfair">PRESENCIAL*</h3>
+        <h2 class="font-playfair text-5xl md:text-7xl mt-2">Real Life</h2>
+        <p class="font-montserrat italic text-sm text-gray-600 mt-8">
+          *Os acessos presenciais terão passes limitados devido à capacidade do nosso escritório, garantindo assim uma
+          experiência confortável e especial para todas as participantes. Lembramos também que custos com transporte,
+          hospedagem e demais despesas ficam sob responsabilidade de cada participante Club Stealer ;)
+        </p>
+      </header>
+
+      <!-- Lado direito (lista) -->
+      <div class="space-y-8 mt-16 md:mt-0 md:col-span-2">
+        <!-- Item 1 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-800/30 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold font-playfair">
+            1
+          </div>
+          <p class="font-playfair text-lg">Almoço de networking: Evento com passes limitados.</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-800/30 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold font-playfair">
+            2
+          </div>
+          <p class="font-playfair text-lg">Ativações no escritório STL: Troca com as 10 club stealers que mais engajarem
+            no mês.</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-800/30 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold font-playfair">
+            3
+          </div>
+          <p class="font-playfair text-lg">Estagiária por um dia: Acompanhar de perto uma gravação ou cobertura de
+            evento.</p>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex items-center gap-6 border-b border-dotted border-gray-800/30 pb-4">
+          <div
+            class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center font-bold font-playfair">
+            4
+          </div>
+          <p class="font-playfair text-lg">Desconto em eventos: Acesso pre-sale exclusivo e desconto de até 60% pra
+            qualquer evento de STL ou PUSH.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DO BLOCO "REAL LIFE" -->
+
+
+  <!-- Modal de Inscrição (inicialmente oculto) -->
+  <div id="signup-modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-gray-900 rounded-lg shadow-xl p-8 max-w-md w-full text-center relative animate-fade-in">
+      <button id="close-modal-button"
+        class="absolute top-3 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Bem-vindo(a) ao Clube!</h2>
+      <p class="text-gray-300 mb-6">Ficamos felizes com seu interesse. Deixe seu e-mail para receber novidades.</p>
+      <form class="flex flex-col space-y-4">
+        <input type="email" placeholder="seu.email@exemplo.com"
+          class="bg-gray-800 border border-gray-700 rounded-md p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit"
+          class="bg-blue-600 text-white rounded-md px-6 py-3 font-semibold hover:bg-blue-700 transition-all">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- INÍCIO DO NOVO MENU MOBILE DE RODAPÉ -->
+  <button id="new-mobile-trigger"
+    class="fixed top-6 right-6 w-10 h-10 z-[1002] md:hidden text-4xl text-white font-light">+</button>
+
+  <div id="bottom-mobile-menu"
+    class="fixed bottom-0 left-0 w-full bg-white text-gray-800 rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-[1000] md:hidden">
+    <nav class="relative px-6 pt-12 pb-6">
+      <ul class="font-montserrat text-gray-800 text-lg">
+        <li class="rounded-t-2xl -mt-5 pt-4">
+          <a href="#"
+            class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>Intro</span><span
+              class="text-gray-400">&rarr;</span></a>
+        </li>
+        <li><a href="#clube" class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>O que
+              é</span><span class="text-gray-400">&rarr;</span></a></li>
+        <li><a href="#time-stl"
+            class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>Curadores</span><span
+              class="text-gray-400">&rarr;</span></a></li>
+        <li><a href="#processo"
+            class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>Processo</span><span
+              class="text-gray-400">&rarr;</span></a></li>
+        <li><a href="#nasceu-para"
+            class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>Assuntos</span><span
+              class="text-gray-400">&rarr;</span></a></li>
+        <li><a href="#onde-e-como"
+            class="flex justify-between items-center py-4 px-3 border-b border-gray-200"><span>Como
+              participar</span><span class="text-gray-400">&rarr;</span></a></li>
+        <li><a href="#" class="flex justify-between items-center py-4 px-3"><span>Dúvidas</span><span
+              class="text-gray-400">&rarr;</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- FIM DO NOVO MENU MOBILE DE RODAPÉ -->
+
+  <script>
+    // --- Script do Modal de Inscrição ---
+    const ctaButton = document.getElementById('cta-button');
+    const modal = document.getElementById('signup-modal');
+    const closeModalButton = document.getElementById('close-modal-button');
+    const newMobileTrigger = document.getElementById('new-mobile-trigger');
+
+
+    if (ctaButton && modal && closeModalButton) {
+      const openModal = () => modal.classList.remove('hidden');
+      const closeModal = () => modal.classList.add('hidden');
+
+      ctaButton.addEventListener('click', openModal);
+      closeModalButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+    }
+
+    // --- Animação do Modal ---
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // --- Script do Header Fixo ---
+    const pageHeader = document.getElementById('page-header');
+
+    if (pageHeader) {
+      const mainNav = document.getElementById('main-nav');
+      const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
+
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          pageHeader.classList.add('bg-white', 'shadow-md');
+          pageHeader.classList.remove('py-6');
+          pageHeader.classList.add('py-4');
+          if (mainNav) {
+            mainNav.classList.remove('text-gray-300');
+            mainNav.classList.add('text-gray-800');
+            navLinks.forEach(link => {
+              link.classList.remove('hover:text-white');
+              link.classList.add('hover:text-black');
+            });
+          }
+          if (newMobileTrigger) {
+            newMobileTrigger.classList.remove('text-white');
+            newMobileTrigger.classList.add('text-gray-800');
+          }
+        } else {
+          pageHeader.classList.remove('bg-white', 'shadow-md');
+          pageHeader.classList.add('py-6');
+          pageHeader.classList.remove('py-4');
+          if (mainNav) {
+            mainNav.classList.add('text-gray-300');
+            mainNav.classList.remove('text-gray-800');
+            navLinks.forEach(link => {
+              link.classList.add('hover:text-white');
+              link.classList.remove('hover:text-black');
+            });
+          }
+          if (newMobileTrigger) {
+            newMobileTrigger.classList.add('text-white');
+            newMobileTrigger.classList.remove('text-gray-800');
+          }
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    // --- Script do Novo Menu Mobile de Rodapé ---
+    const bottomMenu = document.getElementById('bottom-mobile-menu');
+
+    if (bottomMenu && newMobileTrigger) {
+      const bottomMenuLinks = bottomMenu.querySelectorAll('a');
+
+      const toggleBottomMenu = () => {
+        const isOpen = bottomMenu.classList.contains('is-open');
+        bottomMenu.classList.toggle('is-open');
+        newMobileTrigger.classList.toggle('is-open');
+
+        if (!isOpen) {
+          document.body.style.overflow = 'hidden'; // Prevents scrolling background
+        } else {
+          document.body.style.overflow = '';
+        }
+      };
+
+      newMobileTrigger.addEventListener('click', toggleBottomMenu);
+
+      bottomMenuLinks.forEach(link => {
+        link.addEventListener('click', toggleBottomMenu);
+      });
+    }
+  </script>
+</body>
+
+</html>
