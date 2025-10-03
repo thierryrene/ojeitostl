@@ -121,6 +121,18 @@
         overflow-y: auto;
       }
     }
+
+    /* Animação do cursor piscando */
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .blinking-cursor {
+      animation: blink 1s step-end infinite;
+      font-weight: 300;
+    }
   </style>
 </head>
 
@@ -178,8 +190,9 @@
                 Respire<br>
                 o jeito STL<br>
                 de fazer<br>
-                <span class="font-normal px-4 py-1 mt-4 inline-block tracking-[0px] font-montserrat">[ Networking
-                  ]</span>
+                <span class="font-normal px-4 py-1 mt-4 inline-block tracking-[0px] font-montserrat">
+                  [ <span class="animated-text-target"></span><span class="blinking-cursor">|</span> ]
+                </span>
               </h1>
               <!-- Camada superior para legibilidade com opacidade -->
               <h1
@@ -187,8 +200,9 @@
                 Respire<br>
                 o jeito STL<br>
                 de fazer<br>
-                <span class="font-normal px-4 py-1 mt-4 inline-block tracking-[0px] font-montserrat">[ Networking
-                  ]</span>
+                <span class="font-normal px-4 py-1 mt-4 inline-block tracking-[0px] font-montserrat">
+                  [ <span class="animated-text-target"></span><span class="blinking-cursor">|</span> ]
+                </span>
               </h1>
             </div>
           </main>
@@ -201,13 +215,12 @@
       </div>
 
       <!-- Barra de Ação da Seção (não mais fixa) -->
-      <footer
-        class="w-full max-w-[390px] md:max-w-[550px] z-10 rounded-[18px] bg-[rgba(50,50,50,0.8)] backdrop-blur-md mx-auto mb-8">
+      <footer class="w-fit z-10 rounded-[16px] bg-[rgba(50,50,50,0.8)] backdrop-blur-md mx-auto mb-8">
         <div class="flex items-center justify-between gap-x-4">
-          <span class="text-white text-base font-montserrat pl-8">Quero entrar no clube</span>
+          <!-- <span class="text-white text-base font-montserrat pl-8"></span> -->
           <button id="cta-button"
-            class="bg-[#2120EE] text-white rounded-[18px] px-8 py-3 m-1.5 text-base font-regular hover:bg-blue-700 transition-colors">
-            Clique aqui
+            class="bg-[#2120EE] text-white rounded-[12px] px-8 py-3 m-1.5 text-base font-regular hover:bg-blue-700 transition-colors">
+            Quero entrar no clube
           </button>
         </div>
       </footer>
@@ -220,10 +233,10 @@
       <header class="text-center mb-10">
         <img
           src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/ojeitostlfundobranco-1-20250922203403.png"
-          alt="Logo O Jeito STL Creative Club" class="mx-auto h-24 md:h-28 md:w-auto w-[250px] h-[160px]">
+          alt="Logo O Jeito STL Creative Club" class="mx-auto md:w-[400px] w-[250px] h-auto">
       </header>
       <div class="text-center mb-16 md:mb-24">
-        <h2 class="section-title font-playfair font-semibold text-black tracking-[4px] text-[14px] md:text-[20px]">O QUE
+        <h2 class="section-title font-playfair font-semibold text-black tracking-[4px] text-[20px] md:text-[28px]">O QUE
           É?</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-8">
@@ -300,8 +313,11 @@
   <section id="perfis" class="bg-white text-gray-900">
     <div class="w-full max-w-[1500px] mx-auto py-12 md:py-0 md:pt-20">
       <header class="text-center mb-16 md:mb-24">
-        <h3 class="section-title text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair mb-4">PARA QUEM É?
-        </h3>
+        <h2
+          class="section-title font-playfair font-semibold text-black tracking-[4px] text-[20px] md:text-[28px] mb-12">
+          PARA
+          QUEM É?
+        </h2>
         <h2 class="text-4xl md:text-5xl font-playfair text-gray-800">Quem é você no STL Creative Club?</h2>
       </header>
 
@@ -421,7 +437,7 @@
   <section id="time-stl" class="bg-white text-gray-900 pb-24 background-lines">
     <div class="w-full max-w-[1500px] mx-auto px-6 pt-12 md:pt-20 lg:pt-24">
       <header class="text-center mb-16 md:mb-24">
-        <h2 class="section-title font-semibold text-black tracking-[4px] text-[14px] md:text-[20px] font-playfair">TIME
+        <h2 class="section-title font-semibold text-black tracking-[4px] text-[20px] md:text-[28px] font-playfair">TIME
           STL</h2>
       </header>
     </div>
@@ -440,9 +456,8 @@
               </div>
               <div class="text-center">
                 <h3 class="font-montserrat text-xl font-bold text-gray-900">Manuela Bordasch</h3>
-                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Fundadora do
-                  Steal The Look e do
-                  PUSH coapresentadora do O que tem na sua carteira?</p>
+                <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Fundadora Steal The Look, PUSH e
+                  O Que Tem Na Sua Carteira</p>
               </div>
             </div>
 
@@ -456,7 +471,7 @@
                 <h3 class="font-montserrat text-xl font-bold text-gray-900">Laís Miranda</h3>
                 <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Coordenadora de
                   Gente & Gestão
-                  Steal the Look</p>
+                  Steal The Look</p>
               </div>
             </div>
           </div>
@@ -473,8 +488,7 @@
               <div class="text-center">
                 <h3 class="font-montserrat text-xl font-bold text-gray-900">Claudiana Ribeiro</h3>
                 <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente de
-                  Comunidade Steal the
-                  Look</p>
+                  Comunidade Steal The Look</p>
               </div>
             </div>
 
@@ -488,7 +502,7 @@
               <div class="text-center">
                 <h3 class="font-montserrat text-xl font-bold text-gray-900">Bruna Fortino</h3>
                 <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente Comercial
-                  Steal the Look
+                  Steal The Look
                 </p>
               </div>
             </div>
@@ -503,8 +517,7 @@
               <div class="text-center">
                 <h3 class="font-montserrat text-xl font-bold text-gray-900">Isabella Aredes</h3>
                 <p class="font-montserrat text-gray-600 mt-1 text-sm max-w-xs mx-auto">Gerente de
-                  Conteúdo Steal the
-                  Look</p>
+                  Conteúdo Steal The Look</p>
               </div>
             </div>
           </div>
@@ -513,8 +526,8 @@
           <div class="w-full pt-16 md:pt-24">
             <header class="text-center mb-16">
               <h2
-                class="section-title font-semibold text-black tracking-[4px] text-[14px] md:text-[20px] font-playfair">
-                CONVIDADAS</h2>
+                class="section-title font-semibold text-black tracking-[4px] text-[20px] md:text-[28px] font-playfair">
+                CONVIDADOS</h2>
             </header>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
               <!-- Card Convidada 1 -->
@@ -556,8 +569,7 @@
   <section class="border-t border-b border-[#e5e7eb] w-full">
     <!-- Bloco Mensagem Final -->
     <div class="relative w-full text-center bg-white">
-      <div class="absolute bottom-0 left-0 right-0 h-80 from-white to-transparent">
-      </div>
+
       <h2 class="font-montserrat font-regular bg-white relative z-10 text-2xl md:text-[34px] text-gray-600 py-[100px]">
         Esperem
         grandes
@@ -570,7 +582,7 @@
     <div class="background-lines">
       <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
         <header class="text-center mb-12 md:mb-16">
-          <h2 class="section-title font-semibold text-black tracking-[4px] text-[14px] md:text-[20px] font-playfair">
+          <h2 class="section-title font-semibold text-black tracking-[4px] text-[20px] md:text-[28px] font-playfair">
             PROCESSO</h2>
           <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto font-montserrat font-regular">
             O processo é mais real quando vivemos ele juntas. Como é a experiência do clube, passo a passo:
@@ -588,9 +600,9 @@
   <!-- INÍCIO DO BLOCO "O CREATIVE CLUB NASCEU PARA" -->
   <section id="nasceu-para" class="bg-white text-gray-900 border-b border-gray-300">
     <div class="background-lines">
-      <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+      <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24 lg:pb-[200px]">
         <header class="text-center mb-16 md:mb-24">
-          <h2 class="section-title font-semibold text-black tracking-[4px] text-[14px] md:text-[20px] font-playfair">O
+          <h2 class="section-title font-semibold text-black tracking-[4px] text-[20px] md:text-[28px] font-playfair">O
             CREATIVE CLUB NASCEU PARA</h2>
         </header>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -678,11 +690,11 @@
       <!-- Conteúdo textual superior -->
       <header class="text-center z-10 mb-12 md:mb-20">
         <h2
-          class="section-title mb-10 font-semibold text-white tracking-[4px] text-[14px] md:text-[20px] font-playfair">
+          class="section-title mb-10 font-semibold text-white tracking-[4px] text-[20px] md:text-[28px] font-playfair">
           ONDE
           E COMO</h2>
         <p class="mt-6 text-3xl md:text-[34px] text-white">
-          [ONLINE + PRESENCIAL*]
+          [ONLINE + PRESENCIAL]
         </p>
         <p class="mt-4 text-lg md:text-[34px] text-gray-200">
           Encontros em <span class="font-playfair">Real Time</span> e <span class="font-playfair">Real
@@ -888,16 +900,14 @@
   </section>
   <!-- FIM DO BLOCO DE FORMATAÇÃO E CTA FINAL -->
 
-
-
-
   <!-- INÍCIO DA SEÇÃO 'FASES' (ACORDEÃO) -->
   <section id="fases" class="bg-white text-gray-900">
     <div class="w-full max-w-[1500px] mx-auto px-0 py-12 md:py-0">
       <div id="accordion-container" class="border-t border-gray-200">
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-[#0A25FE] hover:text-white">
+        <!-- Item 1: Março -->
+        <div data-color="bg-[#0A25FE]"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-[#0A25FE] hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -905,40 +915,38 @@
                   <span
                     class="number-span font-playfair text-7xl md:text-8xl font-regular text-[#0A25FE] group-hover:text-white transition-colors duration-500">01</span>
                   <button
-                    class="open-btn hidden md:hidden w-10 h-10 items-center justify-center rounded-full border border-gray-300 text-gray-400 text-2xl font-light">+</button>
+                    class="open-btn md:hidden w-10 h-10 items-center justify-center rounded-full border border-gray-300 text-gray-400 text-2xl font-light flex">+</button>
                 </div>
                 <div class="flex-grow pt-4 md:pt-2">
                   <p class="font-montserrat text-sm uppercase tracking-widest">Março</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">A cultura da Inovação</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Manuela Bordasch + Laís Miranda + Convidada</p>
                 </div>
               </div>
-              <button
-                class="close-btn flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full hidden md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pr-8 md:flex md:items-start md:gap-12">
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">01</span>
-              </div>
-              <div>
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-200">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">01</span></div>
+              <div class="pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500">
                   Criar uma cultura organizacional onde todos estão atentos às tendências, não apenas um "departamento
                   ou profissional", e fazer isso se transformar em agilidade operacional é um desafio! O STL se
                   diferencia por ter cada membro da equipe como um sensor de mercado, desde o financeiro até o
-                  atendimento. Afinal, como é o jeito STL de fazer isso acontecer?
-                </p>
+                  atendimento. Afinal, como é o jeito STL de fazer isso acontecer?</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-red-500 hover:text-white">
+        <!-- Item 2: Abril -->
+        <div data-color="bg-red-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-red-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -952,32 +960,30 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Abril</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">Agilidade no Conteúdo</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Isabella Aredes + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pl-8 md:flex md:items-start md:gap-12">
-              <div class="flex-grow md:text-right">
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
-                  Descrição sobre agilidade no conteúdo. Como planejar, criar e distribuir conteúdo de forma eficiente e
-                  relevante, mantendo a qualidade e a consistência da marca em um mercado que muda rapidamente.
-                </p>
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="flex-grow md:text-right pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500 inline-block">
+                  Descrição sobre agilidade no conteúdo. Como planejar, criar e distribuir conteúdo de forma eficiente
+                  e relevante, mantendo a qualidade e a consistência da marca em um mercado que muda rapidamente.</p>
               </div>
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">02</span>
-              </div>
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">02</span></div>
             </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-yellow-500 hover:text-white">
+        <!-- Item 3: Maio -->
+        <div data-color="bg-yellow-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-yellow-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -991,32 +997,30 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Maio</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">Relacionamentos Estratégicos</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Bruna Fortino + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pr-8 md:flex md:items-start md:gap-12">
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">03</span>
-              </div>
-              <div>
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">03</span></div>
+              <div class="pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500">
                   Aprenda a construir e nutrir uma rede de contatos valiosa. Descubra como transformar conexões em
-                  parcerias duradouras que impulsionam o crescimento profissional e de negócios de forma autêntica.
-                </p>
+                  parcerias duradouras que impulsionam o crescimento profissional e de negócios de forma autêntica.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-green-500 hover:text-white">
+        <!-- Item 4: Junho -->
+        <div data-color="bg-green-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-green-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -1030,32 +1034,31 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Junho</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">Collabs Criativas</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Manuela Bordasch + Laís Miranda + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pl-8 md:flex md:items-start md:gap-12">
-              <div class="flex-grow md:text-right">
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="flex-grow md:text-right pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500 inline-block">
                   Explore o poder das colaborações. Entenda como identificar parceiros ideais, estruturar propostas e
                   executar projetos conjuntos que amplificam o alcance e a relevância de todas as marcas envolvidas.
                 </p>
               </div>
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">04</span>
-              </div>
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">04</span></div>
             </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-purple-500 hover:text-white">
+        <!-- Item 5: Julho -->
+        <div data-color="bg-purple-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-purple-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -1069,22 +1072,20 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Julho</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">Métricas que Importam</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Manuela Bordasch + Laís Miranda + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pr-8 md:flex md:items-start md:gap-12">
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">05</span>
-              </div>
-              <div>
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">05</span></div>
+              <div class="pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500">
                   Vá além das curtidas. Aprenda a definir KPIs, analisar dados e interpretar as métricas que realmente
                   indicam o sucesso e a saúde do seu negócio ou projeto criativo, tomando decisões mais inteligentes.
                 </p>
@@ -1093,8 +1094,9 @@
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-orange-500 hover:text-white">
+        <!-- Item 6: Agosto -->
+        <div data-color="bg-orange-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-orange-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -1108,32 +1110,30 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Agosto</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">The Creator Business</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Manuela Bordasch + Laís Miranda + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pl-8 md:flex md:items-start md:gap-12">
-              <div class="flex-grow md:text-right">
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="flex-grow md:text-right pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500 inline-block">
                   Entenda a economia dos criadores de conteúdo. Descubra estratégias para monetizar sua influência,
-                  diversificar fontes de receita e construir uma marca pessoal sólida e sustentável a longo prazo.
-                </p>
+                  diversificar fontes de receita e construir uma marca pessoal sólida e sustentável a longo prazo.</p>
               </div>
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">06</span>
-              </div>
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">06</span></div>
             </div>
           </div>
         </div>
 
-        <div
-          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 md:hover:h-[400px] md:hover:flex md:hover:flex-col md:hover:justify-center hover:bg-pink-500 hover:text-white">
+        <!-- Item 7: Extra -->
+        <div data-color="bg-pink-500"
+          class="accordion-item group overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-200 bg-white text-gray-900 hover:bg-pink-500 hover:text-white">
           <div class="accordion-header p-6 md:p-8 cursor-pointer">
             <div class="flex items-start justify-between gap-4">
               <div class="flex-grow grid md:flex md:items-start md:gap-12">
@@ -1147,25 +1147,22 @@
                   <p class="font-montserrat text-sm uppercase tracking-widest">Extra</p>
                   <h3 class="font-playfair text-2xl md:text-4xl mt-1 md:mt-2">Plataformas do Futuro</h3>
                   <p
-                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-gray-300">
+                    class="participants-text font-montserrat text-base mt-2 md:mt-3 text-gray-500 group-hover:text-white transition-colors duration-500">
                     Manuela Bordasch + Laís Miranda + Convidadas</p>
                 </div>
               </div>
-              <button
-                class="close-btn hidden flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full md:flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-110">&times;</button>
             </div>
           </div>
           <div
-            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[400px] group-hover:opacity-100 transition-all duration-700">
-            <div class="pb-8 px-8 md:p-0 md:pr-8 md:flex md:items-start md:gap-12">
-              <div class="hidden md:block flex-shrink-0">
-                <span class="font-playfair text-7xl md:text-8xl font-regular invisible">07</span>
-              </div>
-              <div>
-                <p class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-white">
+            class="accordion-body max-h-0 opacity-0 overflow-hidden group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700">
+            <div class="pb-8 px-8 md:py-8 md:px-8 md:flex md:items-start md:gap-12">
+              <div class="hidden md:block flex-shrink-0"><span
+                  class="font-playfair text-7xl md:text-8xl font-regular invisible">07</span></div>
+              <div class="pt-2">
+                <p
+                  class="font-playfair max-w-[680px] font-light text-base leading-relaxed text-gray-700 group-hover:text-white transition-colors duration-500">
                   Antecipe as próximas grandes tendências. Uma análise sobre as novas redes sociais, tecnologias e
-                  formatos de conteúdo que irão moldar a comunicação e o marketing nos próximos anos.
-                </p>
+                  formatos de conteúdo que irão moldar a comunicação e o marketing nos próximos anos.</p>
               </div>
             </div>
           </div>
@@ -1175,6 +1172,7 @@
     </div>
   </section>
   <!-- FIM DA SEÇÃO 'FASES' (ACORDEÃO) -->
+
 
   <!-- INÍCIO DA SEÇÃO 'ENTREGÁVEIS' -->
   <section id="entregaveis" class="bg-white text-gray-900 background-lines">
@@ -1727,7 +1725,6 @@
     const closeModalButton = document.getElementById('close-modal-button');
     const newMobileTrigger = document.getElementById('new-mobile-trigger');
 
-
     if (ctaButtons.length > 0 && modal && closeModalButton) {
       const openModal = () => modal.classList.remove('hidden');
       const closeModal = () => modal.classList.add('hidden');
@@ -1846,126 +1843,98 @@
       });
     }
 
-    // --- SCRIPT PARA A INTERATIVIDADE DO ACORDEÃO ---
+    // --- SCRIPT PARA A INTERATIVIDADE DO ACORDEÃO E ANIMAÇÃO DE TEXTO ---
     document.addEventListener('DOMContentLoaded', function () {
-      const accordionItems = document.querySelectorAll('.accordion-item');
+      // --- Animação de Texto ---
+      const animatedTextElements = document.querySelectorAll('.animated-text-target');
+      if (animatedTextElements.length > 0) {
+        const words = ['Networking', 'conteúdo', 'estratégia', 'negócio', 'curadoria'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
 
-      const closeAllItems = () => {
-        accordionItems.forEach(item => {
-          const body = item.querySelector('.accordion-body');
-          const closeButton = item.querySelector('.close-btn');
-          const openButton = item.querySelector('.open-btn');
-          const colorClass = item.dataset.color || 'bg-[#0A25FE]';
-          const spanColor = item.dataset.spanColor;
+        function type() {
+          const currentWord = words[wordIndex];
+          let displayText = '';
 
-          const numberSpan = item.querySelector('.number-span');
-          const participantsP = item.querySelector('.participants-text');
-          const descriptionP = item.querySelector('.accordion-body p');
-
-          item.classList.remove(colorClass, 'text-white');
-          item.classList.add('bg-white', 'text-gray-900');
-
-          if (numberSpan && spanColor) {
-            numberSpan.classList.add(spanColor);
-          }
-          if (participantsP) {
-            participantsP.classList.remove('text-gray-300');
-            participantsP.classList.add('text-gray-500');
-          }
-          if (descriptionP) {
-            descriptionP.classList.remove('text-white', 'text-gray-200');
-            descriptionP.classList.add('text-gray-700');
+          if (isDeleting) {
+            // Deleting text
+            displayText = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            // Typing text
+            displayText = currentWord.substring(0, charIndex + 1);
+            charIndex++;
           }
 
-          body.style.maxHeight = '0';
-          body.style.opacity = '0';
-          if (closeButton) {
-            closeButton.classList.add('hidden');
-            closeButton.classList.remove('md:flex');
+          // Update text for all elements with the class
+          animatedTextElements.forEach(el => el.textContent = displayText);
+
+          let typeSpeed = isDeleting ? 100 : 200;
+
+          if (!isDeleting && charIndex === currentWord.length) {
+            // Pause at the end of the word before deleting
+            typeSpeed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            // Finished deleting, move to the next word
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeSpeed = 500; // Pause before typing the new word
           }
-          if (openButton) {
-            openButton.classList.remove('hidden');
-            openButton.classList.add('flex');
-          }
-        });
-      };
 
-      const openItem = (item) => {
-        const body = item.querySelector('.accordion-body');
-        const closeButton = item.querySelector('.close-btn');
-        const openButton = item.querySelector('.open-btn');
-        const colorClass = item.dataset.color;
-        const spanColor = item.dataset.spanColor;
-
-        const numberSpan = item.querySelector('.number-span');
-        const participantsP = item.querySelector('.participants-text');
-        const descriptionP = item.querySelector('.accordion-body p');
-
-        item.classList.add(colorClass, 'text-white');
-        item.classList.remove('bg-white', 'text-gray-900');
-
-        if (numberSpan && spanColor) {
-          numberSpan.classList.remove(spanColor);
-        }
-        if (participantsP) {
-          participantsP.classList.remove('text-gray-500');
-          participantsP.classList.add('text-gray-300');
-        }
-        if (descriptionP) {
-          descriptionP.classList.remove('text-gray-700', 'text-gray-200');
-          descriptionP.classList.add('text-white');
+          setTimeout(type, typeSpeed);
         }
 
-        body.style.maxHeight = body.scrollHeight + 'px';
-        body.style.opacity = '1';
-
-        if (closeButton) {
-          closeButton.classList.remove('hidden');
-          closeButton.classList.add('md:flex'); // CORREÇÃO: Usar md:flex para desktop
-        }
-        if (openButton) {
-          openButton.classList.add('hidden');
-          openButton.classList.remove('flex');
-        }
-      };
-
-      // --- CORREÇÃO DO BUG ---
-      // 1. Garante que todos os itens comecem fechados para um estado limpo.
-      closeAllItems();
-
-      // 2. Abre o primeiro item por padrão, como era a intenção.
-      const firstItem = accordionItems[0];
-      if (firstItem) {
-        openItem(firstItem);
+        type(); // Start the animation
       }
-      // --- FIM DA CORREÇÃO ---
 
 
-      // Attach event listeners
-      accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
+      // --- Interatividade do Acordeão ---
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      if (accordionItems.length === 0) return;
 
-        header.addEventListener('click', function () {
-          const isOpen = parseFloat(item.querySelector('.accordion-body').style.maxHeight) > 0;
+      const isDesktop = () => window.innerWidth >= 768;
 
-          if (isOpen) {
-            return;
-          }
+      if (!isDesktop()) {
+        const closeAllMobileItems = () => {
+          accordionItems.forEach(item => {
+            item.classList.remove('bg-[#0A25FE]', 'bg-red-500', 'bg-yellow-500', 'bg-green-500', 'bg-purple-500', 'bg-orange-500', 'bg-pink-500', 'text-white');
+            item.querySelector('.number-span')?.classList.remove('text-white');
+            item.querySelector('.participants-text')?.classList.remove('text-gray-300');
+            item.querySelector('.accordion-body p')?.classList.remove('text-gray-200');
 
-          closeAllItems();
-          openItem(item);
+            const body = item.querySelector('.accordion-body');
+            body.style.maxHeight = null;
+          });
+        };
+
+        const openMobileItem = (item) => {
+          closeAllMobileItems();
+          const colorClass = item.dataset.color || 'bg-[#0A25FE]';
+          item.classList.add(colorClass, 'text-white');
+          item.querySelector('.number-span')?.classList.add('text-white');
+          item.querySelector('.participants-text')?.classList.add('text-gray-300');
+          item.querySelector('.accordion-body p')?.classList.add('text-gray-200');
+
+          const body = item.querySelector('.accordion-body');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        };
+
+        accordionItems.forEach(item => {
+          const header = item.querySelector('.accordion-header');
+          header.addEventListener('click', function () {
+            const isOpen = item.classList.contains('text-white');
+            if (isOpen) {
+              closeAllMobileItems();
+            } else {
+              openMobileItem(item);
+            }
+          });
         });
 
-        // Add separate listener for the close button if it exists and is clicked
-        const closeButton = item.querySelector('.close-btn');
-        if (closeButton) {
-          closeButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent header click from firing
-            closeAllItems();
-          })
-        }
-
-      });
+        openMobileItem(accordionItems[0]);
+      }
     });
   </script>
 </body>
