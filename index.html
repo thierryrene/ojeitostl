@@ -298,7 +298,7 @@
 
   <!-- INÍCIO DO BLOCO "PARA QUEM É" -->
   <section id="perfis" class="bg-white text-gray-900">
-    <div class="w-full max-w-[1500px] mx-auto px-6 py-12 md:py-20 lg:py-24">
+    <div class="w-full max-w-[1500px] mx-auto py-12 md:py-0 md:pt-20">
       <header class="text-center mb-16 md:mb-24">
         <h3 class="section-title text-sm font-semibold tracking-[0.2em] text-gray-500 font-playfair mb-4">PARA QUEM É?
         </h3>
@@ -418,7 +418,7 @@
   <!-- FIM DO BLOCO "PARA QUEM É" -->
 
   <!-- INÍCIO DO BLOCO "TIME STL" -->
-  <section id="time-stl" class="bg-white text-gray-900">
+  <section id="time-stl" class="bg-white text-gray-900 pb-24 background-lines">
     <div class="w-full max-w-[1500px] mx-auto px-6 pt-12 md:pt-20 lg:pt-24">
       <header class="text-center mb-16 md:mb-24">
         <h2 class="section-title font-semibold text-black tracking-[4px] text-[14px] md:text-[20px] font-playfair">TIME
@@ -434,7 +434,7 @@
           <div class="w-full flex flex-col sm:flex-row justify-center gap-x-12 gap-y-16">
             <!-- Card Manuela -->
             <div class="w-full max-w-sm">
-              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+              <div class="mb-4 overflow-hidden rounded-2xl aspect-[3/2]">
                 <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/rectangle-16-20250930174935.png"
                   alt="Foto de Manuela Bordasch" class="w-full h-full object-cover filter grayscale">
               </div>
@@ -448,7 +448,7 @@
 
             <!-- Card Laís -->
             <div class="w-full max-w-sm">
-              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+              <div class="mb-4 overflow-hidden rounded-2xl aspect-[3/2]">
                 <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/lais-miranda-20250930174935.png"
                   alt="Foto de Laís Miranda" class="w-full h-full object-cover filter grayscale">
               </div>
@@ -465,7 +465,7 @@
           <div class="w-full flex flex-col md:flex-row justify-center gap-x-12 gap-y-16">
             <!-- Card Claudiana -->
             <div class="w-full max-w-sm">
-              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+              <div class="mb-4 overflow-hidden rounded-2xl aspect-[3/2]">
                 <img
                   src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/claudiana-ribeiro-20250930174935.png"
                   alt="Foto de Claudiana Ribeiro" class="w-full h-full object-cover filter grayscale">
@@ -480,7 +480,7 @@
 
             <!-- Card Bruna -->
             <div class="w-full max-w-sm">
-              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+              <div class="mb-4 overflow-hidden rounded-2xl aspect-[3/2]">
                 <img
                   src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/bruna-fortino-20250930174935.png"
                   alt="Foto de Bruna Fortino" class="w-full h-full object-cover filter grayscale">
@@ -495,7 +495,7 @@
 
             <!-- Card Isabella -->
             <div class="w-full max-w-sm">
-              <div class="mb-4 overflow-hidden rounded-2xl shadow-lg aspect-[3/2]">
+              <div class="mb-4 overflow-hidden rounded-2xl aspect-[3/2]">
                 <img
                   src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/isabella-aredes-20250930174935.png"
                   alt="Foto de Isabella Aredes" class="w-full h-full object-cover filter grayscale">
@@ -545,22 +545,25 @@
             </div>
           </div>
 
-          <!-- Bloco Mensagem Final -->
-          <div class="relative w-full pt-24 md:pt-32 text-center pb-12 md:pb-20 lg:pb-24">
-            <div class="absolute bottom-0 left-0 right-0 h-80 from-white to-transparent">
-            </div>
-            <h2
-              class="font-montserrat font-regular bg-white relative z-10 text-2xl md:text-[34px] text-gray-600 py-[100px]">
-              Esperem
-              grandes
-              nomes!</h2>
-          </div>
+
 
         </div>
       </div>
     </div>
   </section>
   <!-- FIM DO BLOCO "TIME STL" -->
+
+  <section class="border-t border-b border-gray-300 w-full">
+    <!-- Bloco Mensagem Final -->
+    <div class="relative w-full text-center bg-white">
+      <div class="absolute bottom-0 left-0 right-0 h-80 from-white to-transparent">
+      </div>
+      <h2 class="font-montserrat font-regular bg-white relative z-10 text-2xl md:text-[34px] text-gray-600 py-[100px]">
+        Esperem
+        grandes
+        nomes!</h2>
+    </div>
+  </section>
 
   <!-- INÍCIO DO BLOCO "PROCESSO" -->
   <section id="processo" class="bg-white text-gray-900">
@@ -1443,27 +1446,22 @@
     <div class="w-full max-w-[1500px] mx-auto px-6 py-24 md:py-32">
       <!-- Layout de duas colunas para texto -->
       <div class="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-20">
-        <!-- Coluna Esquerda: Título / Logo -->
-        <div class="flex items-center md:justify-start justify-center">
-          <!-- Logo para mobile -->
-          <img src="https://stealthelook.com.br/wp-content/uploads/2021/05/logo-steal-the-look-o.png"
-            alt="Logo Steal The Look" class="h-12 md:hidden">
-          <!-- Texto para desktop -->
-          <h2 class="hidden md:block font-montserrat font-black text-7xl md:text-8xl">
-            STEAL<br>THE LOOK
-          </h2>
+        <!-- Coluna Esquerda: Logo -->
+        <div class="flex items-start md:justify-start justify-center">
+          <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/10/group-23-20251001193121.png"
+            alt="Logo Steal The Look" class="w-full max-w-md">
         </div>
         <!-- Coluna Direita: Parágrafos -->
         <div class="flex flex-col justify-center text-center md:text-left">
-          <p class="font-montserrat text-lg leading-relaxed mb-6">
+          <p class="font-playfair text-lg text-gray-300 leading-relaxed mb-6">
             O STL transforma a forma como a moda, a beleza e o lifestyle chegam até você — de um jeito autêntico,
             acessível e inesquecível.
           </p>
-          <p class="font-montserrat text-lg leading-relaxed mb-6">
+          <p class="font-playfair text-lg text-gray-300 leading-relaxed mb-6">
             O Steal The Look é muito mais do que um veículo: somos um hub de conteúdo que conecta marcas e pessoas por
             meio de uma narrativa criativa, empática e uma curadoria sempre atualizada.
           </p>
-          <p class="font-montserrat text-lg leading-relaxed">
+          <p class="font-playfair text-lg text-gray-300 leading-relaxed">
             Somos a maior fonte de inspiração de moda do Brasil, entregando informação para nossas leitoras ao mesmo
             tempo que contamos histórias inovadoras que geram resultados para marcas parceiras.
           </p>
