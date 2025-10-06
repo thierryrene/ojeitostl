@@ -1610,10 +1610,11 @@
                 </span>
                 <p class="text-gray-400 font-montserrat text-sm mt-1">R$1.670,00 à vista</p>
               </div>
-              <button id="cta-button-participar-mobile"
-                class="bg-[#4F46E5] text-white font-semibold text-sm rounded-full px-6 py-3.5 shadow-lg transition-colors hover:bg-blue-700">
+              <a href="https://www.sympla.com.br/evento-online/o-jeito-stl--creative-club/2975335?ticketid=9482986&qty=1&"
+                target="_blank" rel="noopener noreferrer"
+                class="bg-[#4F46E5] text-white font-semibold text-sm rounded-full px-6 py-3.5 shadow-lg transition-colors hover:bg-blue-700 inline-block">
                 Entrar no clube
-              </button>
+              </a>
             </div>
           </div>
           <div class="bg-[#111111] rounded-3xl p-6">
@@ -1720,10 +1721,11 @@
                 </span>
                 <p class="text-gray-400 font-montserrat text-sm mt-1">R$1.167,00 à vista</p>
               </div>
-              <button id="cta-button-participar"
-                class="bg-[#4F46E5] text-white rounded-full px-10 py-4 font-semibold hover:bg-opacity-90 transition-all">
+              <a href="https://www.sympla.com.br/evento-online/o-jeito-stl--creative-club/2975335?ticketid=9482986&qty=1&"
+                target="_blank" rel="noopener noreferrer"
+                class="bg-[#4F46E5] text-white rounded-full px-10 py-4 font-semibold hover:bg-opacity-90 transition-all inline-block">
                 Entrar no clube
-              </button>
+              </a>
             </div>
 
           </div>
@@ -2434,7 +2436,8 @@
 
   <div id="principais-botoes-cta" class="fixed inset-x-0 bottom-5 z-50 pointer-events-none">
     <div class="w-full flex justify-center">
-      <a href="#participar"
+      <a href="https://www.sympla.com.br/evento-online/o-jeito-stl--creative-club/2975335?ticketid=9482986&qty=1&"
+        target="_blank" rel="noopener noreferrer"
         class="bg-[#4F46E5] text-white font-semibold text-sm rounded-full px-6 py-3.5 shadow-lg transition-colors hover:bg-blue-700 pointer-events-auto whitespace-nowrap">
         Quero entrar no clube
       </a>
@@ -2457,136 +2460,6 @@
       </a>
     </div>
   </div>
-
-  <div id="redirect-modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-    <div class="bg-gray-900 rounded-lg shadow-xl p-8 max-w-md w-full text-center relative animate-fade-in">
-      <button id="close-redirect-modal-button"
-        class="absolute top-3 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
-
-      <h2 class="text-2xl font-bold mb-4 font-montserrat">Você está saindo do site</h2>
-
-      <p class="text-gray-300 mb-6 font-playfair">
-        Você será redirecionado para a nossa página de inscrição segura no Sympla.
-      </p>
-
-      <div class="mb-6">
-        <p class="text-gray-400">Redirecionando em <span id="countdown-timer" class="font-bold text-white">30</span>
-          segundos...</p>
-      </div>
-
-      <button id="skip-countdown-button"
-        class="bg-[#4F46E5] text-white rounded-full px-10 py-4 font-semibold hover:bg-opacity-90 transition-all w-full">
-        Ir para a página agora
-      </button>
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // --- LÓGICA DO MODAL DE REDIRECIONAMENTO ---
-
-      // 1. Seleciona os elementos do DOM
-      const redirectModal = document.getElementById('redirect-modal');
-      const ctaButtonsRedirect = document.querySelectorAll('#cta-button-participar, #cta-button-participar-mobile');
-      const closeModalButtonRedirect = document.getElementById('close-redirect-modal-button');
-      const skipCountdownButton = document.getElementById('skip-countdown-button');
-      const countdownTimerSpan = document.getElementById('countdown-timer');
-
-      // 2. Define variáveis de controle
-      const redirectUrl = 'https://www.sympla.com.br/evento-online/o-jeito-stl--creative-club/2975335?ticketid=9482986&qty=1&';
-      const countdownDuration = 30; // Duração da contagem em segundos
-      let countdownInterval; // Variável para armazenar o ID do setInterval
-      let currentCountdown; // Variável para armazenar o tempo restante
-
-      // 3. Funções para controlar o modal e a contagem
-
-      /**
-       * Inicia a contagem regressiva e atualiza o display.
-       * Ao final, redireciona o usuário.
-       */
-      function startCountdown() {
-        currentCountdown = countdownDuration;
-        countdownTimerSpan.textContent = currentCountdown;
-
-        // Limpa qualquer intervalo anterior para evitar múltiplos contadores
-        clearInterval(countdownInterval);
-
-        countdownInterval = setInterval(() => {
-          currentCountdown--;
-          countdownTimerSpan.textContent = currentCountdown;
-
-          if (currentCountdown <= 0) {
-            performRedirect();
-          }
-        }, 1000); // Executa a cada 1 segundo
-      }
-
-      /**
-       * Para a contagem regressiva.
-       */
-      function stopCountdown() {
-        clearInterval(countdownInterval);
-      }
-
-      /**
-       * Redireciona o usuário para a URL final em uma nova aba.
-       */
-      function performRedirect() {
-        stopCountdown();
-        window.open(redirectUrl, '_blank'); // Abre em uma nova aba
-        hideModal();
-      }
-
-      /**
-       * Mostra o modal na tela.
-       */
-      function showModal() {
-        if (redirectModal) {
-          redirectModal.classList.remove('hidden');
-          startCountdown();
-        }
-      }
-
-      /**
-       * Esconde o modal da tela e para a contagem.
-       */
-      function hideModal() {
-        if (redirectModal) {
-          redirectModal.classList.add('hidden');
-          stopCountdown();
-        }
-      }
-
-      // 4. Adiciona os event listeners aos botões
-
-      // Adiciona o evento de clique a todos os botões de CTA que devem abrir este modal
-      ctaButtonsRedirect.forEach(button => {
-        button.addEventListener('click', (event) => {
-          event.preventDefault(); // Previne qualquer comportamento padrão do link/botão
-          showModal();
-        });
-      });
-
-      // Evento para o botão de pular a contagem
-      if (skipCountdownButton) {
-        skipCountdownButton.addEventListener('click', performRedirect);
-      }
-
-      // Eventos para fechar o modal
-      if (closeModalButtonRedirect) {
-        closeModalButtonRedirect.addEventListener('click', hideModal);
-      }
-
-      // Fecha o modal se o usuário clicar fora da área de conteúdo (no overlay)
-      if (redirectModal) {
-        redirectModal.addEventListener('click', (event) => {
-          if (event.target === redirectModal) {
-            hideModal();
-          }
-        });
-      }
-    });
-  </script>
 
   <style>
     /* Esta classe será aplicada dinamicamente via JavaScript 
