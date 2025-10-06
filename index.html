@@ -131,6 +131,109 @@
       animation: blink 1s step-end infinite;
       font-weight: 300;
     }
+
+    /* --- ESTILOS PARA ANIMAÇÃO DE EMOJI --- */
+    .oval-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      aspect-ratio: 2.5 / 1;
+      /* Proporção horizontal para desktop */
+      background-color: white;
+      /* Fundo preto para desktop */
+      clip-path: ellipse(50% 50% at 50% 50%);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .oval-container:hover {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .emoji-scroller {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      animation: scroll-horizontal 25s linear infinite;
+      /* Animação horizontal padrão */
+    }
+
+    .oval-container:hover .emoji-scroller {
+      animation-play-state: paused;
+    }
+
+    .emoji-scroller span {
+      font-size: 5rem;
+      margin: 0 1.5rem;
+      cursor: default;
+      transition: transform 0.2s ease;
+    }
+
+    .emoji-scroller span:hover {
+      transform: scale(1.2);
+    }
+
+    /* Animação horizontal para desktop */
+    @keyframes scroll-horizontal {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Animação vertical para mobile */
+    @keyframes scroll-vertical {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    /* Media query para adaptações em telas mobile */
+    @media (max-width: 767px) {
+
+      /* Container da animação */
+      #onde-e-como .w-full.max-w-4xl {
+        max-width: 240px;
+        /* Deixa o container mais estreito no mobile */
+      }
+
+      .oval-container {
+        aspect-ratio: 2 / 3;
+        /* Proporção vertical */
+        background-color: white;
+        /* Fundo branco no mobile */
+      }
+
+      /* Scroller e animação */
+      .emoji-scroller {
+        flex-direction: column;
+        /* Organiza os emojis na vertical */
+        height: fit-content;
+        width: 100%;
+        animation: scroll-vertical 25s linear infinite;
+        /* Aplica a animação vertical */
+      }
+
+      /* Emojis */
+      .emoji-scroller span {
+        font-size: 3.5rem;
+        /* Tamanho ajustado para o layout vertical */
+        margin: 1.5rem 0;
+        /* Espaçamento vertical */
+        color: initial;
+        /* Reseta a cor para que emojis de texto fiquem visíveis no fundo branco */
+      }
+    }
+
+    /* --- FIM DOS ESTILOS PARA ANIMAÇÃO DE EMOJI --- */
   </style>
 </head>
 
@@ -622,7 +725,7 @@
               <!-- Text Content -->
               <foreignObject x="120" y="15" width="260" height="120">
                 <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
-                  <p class="font-playfair text-[16px] text-gray-700 leading-relaxed">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
                     Ser uma rede de apoio com quem você pode contar, trocar e compartilhar
                     experiências.
                   </p>
@@ -645,7 +748,7 @@
               <!-- Text Content -->
               <foreignObject x="120" y="15" width="260" height="120">
                 <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
-                  <p class="font-playfair text-[16px] text-gray-700 leading-relaxed">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
                     Ativar um networking relevante para você crescer na carreira.
                   </p>
                 </div>
@@ -667,7 +770,7 @@
               <!-- Text Content -->
               <foreignObject x="120" y="15" width="260" height="120">
                 <div xmlns="http://www.w3.org/1999/xhtml" class="flex h-full items-center p-2">
-                  <p class="font-playfair text-[16px] text-gray-700 leading-relaxed">
+                  <p class="font-playfair text-lg text-gray-700 leading-relaxed">
                     Ensinar como fazer curadoria de conteúdos relevantes em um mar de conteúdos
                     ruins.
                   </p>
@@ -703,16 +806,23 @@
         </p>
       </header>
 
-      <!-- Imagens responsivas -->
-      <div class="w-full max-w-4xl lg:max-w-5xl px-4">
-        <div class="bg-white rounded-2xl">
-          <!-- Imagem para Mobile -->
-          <img
-            src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/ksnip-20250930-100249-20250930130305.png"
-            alt="Faixa com emojis exibida em celulares" class="md:hidden w-full h-auto">
-          <!-- Imagem para Desktop -->
-          <img src="https://static.stealthelook.com.br/wp-content/uploads/2025/09/frame-46-1-20250930124352.png"
-            alt="Faixa com emojis exibida em desktops" class="hidden md:block w-full h-auto">
+      <!-- Animação de Emojis -->
+      <div class="w-full lg:max-w-5xl px-4">
+        <!-- Container principal com o formato oval -->
+        <div class="oval-container" title="Passe o mouse para pausar">
+          <!-- O elemento que vai rolar com os emojis dentro -->
+          <div class="emoji-scroller">
+            <span>🔒</span>
+            <span>🔑</span>
+            <span>🖤</span>
+            <span>📚</span>
+            <span>📈</span>
+            <span>👀</span>
+            <span>✍️</span>
+            <span>💡</span>
+            <span>🚀</span>
+            <span>💻</span>
+          </div>
         </div>
       </div>
 
@@ -2158,11 +2268,37 @@
 
       // --- Interatividade do Acordeão ---
       const accordionItems = document.querySelectorAll('.accordion-item');
-      if (accordionItems.length === 0) return;
+      if (accordionItems.length > 0) {
+        const isDesktop = () => window.innerWidth >= 768;
 
-      const isDesktop = () => window.innerWidth >= 768;
+        const setupMobileAccordion = () => {
+          if (isDesktop()) {
+            // Se for desktop, removemos possíveis estados móveis para limpar
+            closeAllMobileItems();
+            return;
+          }
 
-      if (!isDesktop()) {
+          accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            if (header && !header.hasAttribute('data-listener-added')) {
+              header.addEventListener('click', function (event) {
+                // A parada da propagação do evento evita que cliques no header
+                // acionem acidentalmente outros listeners no documento,
+                // o que poderia estar causando a mudança de cor inesperada.
+                event.stopPropagation();
+
+                const isOpen = item.classList.contains('text-white');
+                if (isOpen) {
+                  closeAllMobileItems();
+                } else {
+                  openMobileItem(item);
+                }
+              });
+              header.setAttribute('data-listener-added', 'true');
+            }
+          });
+        };
+
         const closeAllMobileItems = () => {
           accordionItems.forEach(item => {
             item.classList.remove('bg-[#0A25FE]', 'bg-red-500', 'bg-yellow-500', 'bg-green-500', 'bg-purple-500', 'bg-orange-500', 'bg-pink-500', 'text-white');
@@ -2171,7 +2307,9 @@
             item.querySelector('.accordion-body p')?.classList.remove('text-gray-200');
 
             const body = item.querySelector('.accordion-body');
-            body.style.maxHeight = null;
+            if (body) {
+              body.style.maxHeight = null;
+            }
           });
         };
 
@@ -2184,22 +2322,26 @@
           item.querySelector('.accordion-body p')?.classList.add('text-gray-200');
 
           const body = item.querySelector('.accordion-body');
-          body.style.maxHeight = body.scrollHeight + 'px';
+          if (body) {
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
         };
 
-        accordionItems.forEach(item => {
-          const header = item.querySelector('.accordion-header');
-          header.addEventListener('click', function () {
-            const isOpen = item.classList.contains('text-white');
-            if (isOpen) {
-              closeAllMobileItems();
-            } else {
-              openMobileItem(item);
-            }
-          });
+        // Executa a configuração inicial
+        setupMobileAccordion();
+
+        // Aguarda o carregamento completo da página (incluindo imagens e fontes)
+        // para garantir que a altura do conteúdo do acordeão (scrollHeight) seja calculada corretamente.
+        // Isso assegura que o primeiro item sempre abra com a altura certa.
+        window.addEventListener('load', () => {
+          if (!isDesktop() && accordionItems.length > 0) {
+            // Abre o primeiro item por padrão
+            openMobileItem(accordionItems[0]);
+          }
         });
 
-        openMobileItem(accordionItems[0]);
+        // Reconfigura o acordeão ao redimensionar a janela
+        window.addEventListener('resize', setupMobileAccordion);
       }
     });
   </script>
@@ -2477,6 +2619,21 @@
       highlightActiveLink();
 
       // --- FIM: LÓGICA PARA SCROLL SUAVE E MENU INTERATIVO ---
+
+      // --- INÍCIO: LÓGICA PARA ANIMAÇÃO DE EMOJI ---
+      const scroller = document.querySelector('.emoji-scroller');
+      if (scroller) {
+        const scrollerContent = Array.from(scroller.children);
+        // Apenas duplica se ainda não foi duplicado
+        if (scrollerContent.length > 0 && scroller.children.length === scrollerContent.length) {
+          scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute('aria-hidden', true);
+            scroller.appendChild(duplicatedItem);
+          });
+        }
+      }
+      // --- FIM: LÓGICA PARA ANIMAÇÃO DE EMOJI ---
     });
   </script>
 </body>
