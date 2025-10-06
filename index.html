@@ -2330,16 +2330,6 @@
         // Executa a configuração inicial
         setupMobileAccordion();
 
-        // Aguarda o carregamento completo da página (incluindo imagens e fontes)
-        // para garantir que a altura do conteúdo do acordeão (scrollHeight) seja calculada corretamente.
-        // Isso assegura que o primeiro item sempre abra com a altura certa.
-        window.addEventListener('load', () => {
-          if (!isDesktop() && accordionItems.length > 0) {
-            // Abre o primeiro item por padrão
-            openMobileItem(accordionItems[0]);
-          }
-        });
-
         // Reconfigura o acordeão ao redimensionar a janela
         window.addEventListener('resize', setupMobileAccordion);
       }
